@@ -8,9 +8,9 @@ Insert the brackets in the input field and submit it to itself ($_GET) to check 
 Is very simples, just count opening and closing brackets, if the number of close and opening brackets dont fit PHP throw an invalid message
 
 Examples:
-● (){}[] is valid
-● [{()}](){} is valid
-● []{() is not valid
-● [{)] is not valid
+* (){}[] is valid
+* [{()}](){} is valid
+* []{() is not valid
+* [{)] is not valid
 
 Author: Francisco Matelli Matulovic
