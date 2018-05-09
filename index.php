@@ -3,6 +3,7 @@
 $text = $_GET['b1-b'];
 
 function verifyBrackets($s) {
+	#simple counting
 	$open_t1 = substr_count($s, '(');
 	$open_t2 = substr_count($s, '{');
 	$open_t3 = substr_count($s, '[');
@@ -14,6 +15,28 @@ function verifyBrackets($s) {
 	
 	if($open_t1!=$close_t1 || $open_t2!=$close_t2 || $open_t3!=$close_t3 )
 		$brackets_ok=false;
+
+	#special case, check position for first ocurrencies (dont need to be recursive)
+	if($open_t1 && $close_t1) {
+		$pt_o = strpos($s, '(');
+		$pt_c = strpos($s, ')');
+		if($pt_c<$pt_o)
+			$brackets_ok=false;
+	}
+
+	if($open_t2 && $close_t2) {
+		$pt_o = strpos($s, '{');
+		$pt_c = strpos($s, '}');
+		if($pt_c<$pt_o)
+			$brackets_ok=false;
+	}
+
+	if($open_t3 && $close_t3) {
+		$pt_o = strpos($s, '[');
+		$pt_c = strpos($s, ']');
+		if($pt_c<$pt_o)
+			$brackets_ok=false;
+	}
 	return $brackets_ok;
 }
 $brackets_ok=verifyBrackets($text);
