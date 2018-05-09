@@ -53,7 +53,7 @@ else
 </head>
 <body>
 <h1>Brackets parser</h1>
-<p>Write strings with brackets above to check out consistency</p>
+<p>Write strings with brackets in the input field below to check out consistency</p>
 <form method="GET" name="b1" action="index.php">
 	<input type="text" name="b1-b">
 	<input type="submit" name="b1-s" value="verify">
