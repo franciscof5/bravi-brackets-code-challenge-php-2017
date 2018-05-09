@@ -40,10 +40,7 @@ function verifyBrackets($s) {
 	return $brackets_ok;
 }
 $brackets_ok=verifyBrackets($text);
-if($brackets_ok)
-	echo " valid";
-else
-	echo " not valid";
+
 
 ?>
 <!DOCTYPE html>
@@ -58,6 +55,12 @@ else
 	<input type="text" name="b1-b">
 	<input type="submit" name="b1-s" value="verify">
 </form>
+<?php
+if($brackets_ok)
+	echo $text.": valid";
+else
+	echo $text.": not valid";
+?>
 <p>Author: Francisco Matelli Matulovic</p>
 <p>Released under GNU GPLv3</p>
 </body>
