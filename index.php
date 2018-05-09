@@ -1,5 +1,27 @@
 <?php
-var_dump($_GET);
+
+$text = $_GET['b1-b'];
+
+function verifyBrackets($s) {
+	$open_t1 = substr_count($s, '(');
+	$open_t2 = substr_count($s, '{');
+	$open_t3 = substr_count($s, '[');
+	$close_t1 = substr_count($s, ')');
+	$close_t2 = substr_count($s, '}');
+	$close_t3 = substr_count($s, ']');
+	
+	$brackets_ok=true;
+	
+	if($open_t1!=$close_t1 || $open_t2!=$close_t2 || $open_t3!=$close_t3 )
+		$brackets_ok=false;
+	return $brackets_ok;
+}
+$brackets_ok=verifyBrackets($text);
+if($brackets_ok)
+	echo " valid";
+else
+	echo " not valid";
+
 ?>
 <!DOCTYPE html>
 <html>
